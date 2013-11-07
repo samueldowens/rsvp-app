@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.name %></h1>
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+
+<br>
+<%= link_to "Create a New Event", {:action=>"new", :controller=>"events", :user_id=>"#{@user.id}"} %>

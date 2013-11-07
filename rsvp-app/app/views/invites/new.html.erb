@@ -1,0 +1,16 @@
+<h1>New invite</h1>
+
+<h2> Create Invite </h2>
+<%= form_for @invite do |f| %>
+  <label for="invite[user_id]">Who Do You Want to Invite?</label>
+  <select id="invite[user_id]" name="invite[user_id]">
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+  </select>
+    <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :rsvped %><br>
+    <%= f.submit %>
+<% end %>
+<%= link_to 'Back', invites_path %>
+

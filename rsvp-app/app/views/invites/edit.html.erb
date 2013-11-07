@@ -1,0 +1,30 @@
+<h1>Editing invite</h1>
+
+<%= form_for(@invite) do |f| %>
+  <label for="invite[event_id]">Event</label>
+  <select id="invite[event_id]" name="invite[event_id]">
+    <% @events.each do |event| %>
+      <option value="<%= event.id %>"><%= event.name %></option>
+    <% end %>
+    <br>
+  </select>
+
+  <label for="invite[user_id]">User</label>
+  <select id="invite[user_id]" name="invite[user_id]">
+    <% @users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+    <br>
+  </select>
+  
+ <label for="invite[rsvped]">RSVP Status</label>
+  <select id="invite[rsvped]" name="invite[rsvped]">
+      <option value="<%= "true" %>"><%= "True" %></option>
+      <option value="<%= "false" %>"><%= "False" %></option>
+    <br>
+  </select>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', invites_path %>

@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+<h1>Invitation to: <%= @event.name %></h1><br>
+<h2>Invitation for: <%= @user.name %></h2><br>
+<h3>RSVP Status: <%= @invite.rsvped %></h3><br>
+<%= link_to 'Edit', edit_invite_path(@invite) %> |
+<%= link_to 'Back', invites_path %>
