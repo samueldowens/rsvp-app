@@ -15,8 +15,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    user = User.find(params[:user_id])
-    @event = Event.new(:user_id => user.id)
+    @event = Event.new(:user_id => params[:user_id], :name => "Event Name", :description => "Event Description")
   end
 
   # GET /events/1/edit
